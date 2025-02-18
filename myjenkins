@@ -2,22 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Deploying site') {
             steps {
-                echo 'in building stage.'
-                bat 'javac HelloWorld.java'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }
-        stage('Deployed') {
-            steps {
-                echo 'run'
-                bat 'java HelloWorld'
-            }
-        }
+             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'https://github.com/SharavanMudaliar/GitRepo', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
     }
+}
+}
 }
