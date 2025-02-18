@@ -5,7 +5,6 @@ pipeline {
         stage('Deploying site') {
             steps {
              publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'https://github.com/SharavanMudaliar/GitRepo', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-    }
 }
 }
 }
