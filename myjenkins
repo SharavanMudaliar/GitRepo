@@ -4,17 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build in Prgoress...'
+                echo 'in building stage.'
+                bat 'java HelloWorld.java'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing in Prgoress...'
+                echo 'Testing'
             }
         }
         stage('Deployed') {
             steps {
-                echo 'Deployed'
+                echo 'run'
+                bat 'java HelloWorld'
             }
         }
     }
