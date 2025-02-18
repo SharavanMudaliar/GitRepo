@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'in building stage.'
-                bat 'java HelloWorld.java'
+                bat 'javac HelloWorld.java'
             }
         }
         stage('Test') {
